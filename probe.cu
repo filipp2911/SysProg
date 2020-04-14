@@ -12,7 +12,9 @@
 *
 *******************************************************************************/
 #include <stdio.h>
+#include <thread>
 
+  unsigned int numCores = std::thread::hardware_concurrency();
 
 /******************************************************************************/
 int main(int argc, char *argv[]){
@@ -20,7 +22,6 @@ int main(int argc, char *argv[]){
   cudaError_t err;
   err = cudaDeviceReset();
 
-  unsigned int numCores = std::thread::hardware_concurrency();
 
   cudaDeviceProp prop;
   int count;
